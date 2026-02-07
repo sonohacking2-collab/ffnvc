@@ -1,0 +1,84 @@
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  background: #000;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  font-family: Arial, sans-serif;
+}
+.feed { display: flex; flex-direction: column; }
+.post {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+}
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+.profile img {
+  width: 8vw;
+  height: 8vw;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+}
+.follow-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.actions {
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.actions button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+.comment-box {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 80px;
+}
+.comment-box input {
+  width: 100%;
+  padding: 1vw;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 1.5vw;
+}
+
+/* Responsive for mobile/tablet */
+@media screen and (max-width: 768px) {
+  .profile img { width: 50px; height: 50px; }
+  .actions button { font-size: 14px; }
+  .comment-box input { font-size: 14px; padding: 8px; }
+}

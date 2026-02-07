@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional TikTok-style Image Feed</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="feed">
+<script>
+const posts = [];
+const imageLink = 'https://i.postimg.cc/ZYctNLTG/625031565-2330206677483943-7733189473594700973-n.jpg';
+const names = ['Alice','Bob','Charlie','David','Eve'];
+for(let i=0;i<5;i++){
+  const like = Math.floor(Math.random()*1000);
+  const comment = Math.floor(Math.random()*200);
+  const save = Math.floor(Math.random()*500);
+  const name = names[i];
+  document.write(`
+    <div class="post" style="background-image: url('${imageLink}');">
+      <div class="overlay">
+        <div class="profile">
+          <img src='${imageLink}' alt='Profile'>
+          <span>${name}</span>
+        </div>
+        <button class='follow-btn'>Follow</button>
+      </div>
+      <div class="actions">
+        <button>Like<br>${like}</button>
+        <button>Comment<br>${comment}</button>
+        <button>Share<br>0</button>
+        <button>Save<br>${save}</button>
+      </div>
+      <div class="comment-box">
+        <input type='text' placeholder='Add a comment...'>
+      </div>
+    </div>
+  `);
+}
+</script>
+</div>
+</body>
+</html>
